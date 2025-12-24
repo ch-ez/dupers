@@ -171,7 +171,6 @@
     </footer>
 
     <script>
-        // Function to animate counting UP (Servers)
         function animateCountUp(id, start, end, duration) {
             let obj = document.getElementById(id);
             let startTimestamp = null;
@@ -186,34 +185,27 @@
             window.requestAnimationFrame(step);
         }
 
-        // Function to animate counting DOWN (Price Crash)
         function animatePriceCrash(id, start, end, duration) {
             let obj = document.getElementById(id);
             let startTimestamp = null;
             const step = (timestamp) => {
                 if (!startTimestamp) startTimestamp = timestamp;
                 const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                // Calculate current value
                 let current = start - (progress * (start - end));
-                // Format as currency
                 obj.innerHTML = "$" + current.toFixed(2);
                 
                 if (progress < 1) {
                     window.requestAnimationFrame(step);
                 } else {
-                    obj.innerHTML = "$0.00"; // Ensure it ends exactly on 0
-                    obj.style.color = "#ff3e3e"; // Keep it red
+                    obj.innerHTML = "$0.00";
+                    obj.style.color = "#ff3e3e";
                 }
             };
             window.requestAnimationFrame(step);
         }
-
-        // Run animations when page loads
         window.onload = function() {
-            // Count Servers from 0 to 142 over 2 seconds
             animateCountUp("server-count", 0, 142, 100000);
             
-            // Crash Price from $50.00 to $0.00 over 2.5 seconds
             animatePriceCrash("price-count", 300, 0, 5000);
         };
     </script>
