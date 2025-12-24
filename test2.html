@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dupers United</title>
+    <style>
+        /* --- CSS RESET & VARIABLES --- */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #111111;
+            --accent-color: #5865F2; /* Discord Blurple */
+            --youtube-color: #FF0000; /* YouTube Red */
+            --flexispot-color: #FF6600; /* FlexiSpot Orange */
+            --font-main: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* --- BACKGROUND CANVAS --- */
+        #network-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* --- CONTENT WRAPPER --- */
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* --- MAIN CONTAINER WITH "HALO" --- */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            animation: fadeIn 2s ease-out;
+            padding: 60px;
+            
+            /* The "Frosted Halo" that hides the lines behind text */
+            background: radial-gradient(
+                ellipse at center, 
+                rgba(255, 255, 255, 0.95) 0%, 
+                rgba(255, 255, 255, 0.85) 40%, 
+                rgba(255, 255, 255, 0) 75%
+            );
+        }
+
+        /* --- BIG TITLE --- */
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            color: var(--text-color);
+            text-shadow: 0 0 30px rgba(255,255,255,1);
+            position: relative;
+            display: inline-block;
+        }
+
+        /* --- TRADEMARK LOGO STYLE --- */
+        .tm {
+            font-size: 0.25em;
+            vertical-align: top;
+            position: relative;
+            top: 0.2em; 
+            margin-left: 5px;
+            opacity: 0.4;
+            font-weight: 400;
+            letter-spacing: 0;
+        }
+
+        /* --- QUOTE / MISSION --- */
+        p.mission {
+            font-size: 1.35rem;
+            font-weight: 400;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 3rem;
+            max-width: 580px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- DISCORD BUTTON --- */
+        .discord-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 16px 36px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+        }
+
+        .discord-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background-color: var(--accent-color);
+        }
+
+        /* --- PARTNER AREA --- */
+        .partner-area {
+            border-top: 1px solid rgba(0,0,0,0.08);
+            padding-top: 2rem;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .partner-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .partner-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px; /* Spacing between rows */
+            align-items: center;
+        }
+
+        .partner-row {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .partner-link {
+            text-decoration: none;
+            color: #444;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: rgba(0,0,0,0.02);
+        }
+
+        .partner-link:hover {
+            background: rgba(0,0,0,0.05);
+            color: var(--text-color);
+            transform: translateY(-1px);
+        }
+
+        /* --- ICON STYLING --- */
+        .icon-svg {
+            flex-shrink: 0; 
+        }
+
+        /* YouTube Specific Color */
+        .yt-icon { color: var(--youtube-color); }
+        
+        /* FlexiSpot Specific Hover */
+        .partner-link.flexi:hover .flexi-icon {
+            color: var(--flexispot-color);
+        }
+        .flexi-icon {
+            color: #ccc;
+            transition: color 0.2s;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; letter-spacing: -1px; }
+            p.mission { font-size: 1.1rem; }
+            .container { padding: 30px; }
+            .partner-row { flex-direction: column; gap: 10px; width: 100%; }
+            .partner-link { width: 100%; justify-content: center; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- The Network Background -->
+    <canvas id="network-canvas"></canvas>
+
+    <!-- The Main Content -->
+    <div class="content-wrapper">
+        <div class="container">
+            <!-- Title with Trademark -->
+            <h1>Dupers United<span class="tm">&trade;</span></h1>
+            
+            <p class="mission">
+                We break the economy to fix the game. <br>
+                Taking a stand against predatory P2W gambling.
+            </p>
+
+            <a href="https://discord.gg/YOUR_INVITE_CODE" class="discord-btn" target="_blank">
+                Join the Discord
+            </a>
+
+            <!-- Partner Area -->
+            <div class="partner-area">
+                <div class="partner-label">Official Partners</div>
+                
+                <div class="partner-grid">
+                    <!-- Top Row: The Owners -->
+                    <div class="partner-row">
+                        <a href="https://www.youtube.com/@TheDuperTrooper" target="_blank" class="partner-link">
+                            <svg class="icon-svg yt-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                            </svg>
+                            The Duper Trooper
+                        </a>
+
+                        <a href="https://www.youtube.com/@TheMisterEpic" target="_blank" class="partner-link">
+                            <svg class="icon-svg yt-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                            </svg>
+                            TheMisterEpic
+                        </a>
+                    </div>
+
+                    <!-- Bottom Row: FlexiSpot (In-between/Centered) -->
+                    <div class="partner-row">
+                        <a href="https://flexispot.co.uk/" target="_blank" class="partner-link flexi">
+                            <!-- Shopping Bag Icon -->
+                            <svg class="icon-svg flexi-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12zm-7-8c-2.76 0-5-2.24-5-5h2c0 1.66 1.34 3 3 3s3-1.34 3-3h2c0 2.76-2.24 5-5 5z"/>
+                            </svg>
+                            FlexiSpot
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script for Network Effect -->
+    <script>
+        const canvas = document.getElementById('network-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        let particles = [];
+        
+        // Configuration
+        const PARTICLE_COUNT = 70;      
+        const CONNECT_DIST = 180;       
+        const MOUSE_DIST = 250;         
+        const SPEED = 0.25;            
+        
+        // Colors 
+        const DOT_COLOR = 'rgba(0, 0, 0, 0.15)'; 
+        const BASE_LINE_OPACITY = 0.12; 
+
+        let mouse = { x: null, y: null };
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+        
+        window.addEventListener('mouseout', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+            initParticles();
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * SPEED;
+                this.vy = (Math.random() - 0.5) * SPEED;
+                this.size = 2;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+
+            draw() {
+                ctx.fillStyle = DOT_COLOR;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const count = width < 768 ? PARTICLE_COUNT / 2 : PARTICLE_COUNT;
+            for (let i = 0; i < count; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                for (let j = i; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < CONNECT_DIST) {
+                        const opacity = BASE_LINE_OPACITY * (1 - (dist / CONNECT_DIST));
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(0, 0, 0, ${opacity})`;
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+
+                if (mouse.x != null) {
+                    const dx = particles[i].x - mouse.x;
+                    const dy = particles[i].y - mouse.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < MOUSE_DIST) {
+                        const opacity = BASE_LINE_OPACITY * (1 - (dist / MOUSE_DIST));
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(0, 0, 0, ${opacity})`;
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+        animate();
+    </script>
+</body>
+</html>
