@@ -26,7 +26,7 @@ jobs:
       - name: Build
         env:
           # Use empty string for custom domains so assets load from root
-          BASE_PATH: '/svelte-template'
+          BASE_PATH: '/'
         run: npm run build
 
       - name: Upload Artifacts
