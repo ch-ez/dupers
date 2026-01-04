@@ -32,8 +32,7 @@
             </div>
             <p class="subtitle">Mods for Duping</p>
             <p class="description">
-                Everything you need to start dupe hunting in Minecraft. 
-                Essential mods, tools, and our custom addon.
+                Everything you need to start dupe hunting in Minecraft.
             </p>
             
             <div class="social-links">
