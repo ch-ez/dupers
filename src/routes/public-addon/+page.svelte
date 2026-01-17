@@ -11,7 +11,7 @@
     const manualContributors = [
         {
             login: 'KhaoDoesDev',
-            html_url: 'https://github.com/Khao',
+            html_url: 'https://github.com/KhaoDoesDev',
             avatar_url: 'https://avatars.githubusercontent.com/u/62739017?v=4',
             contributions: 1
         }
