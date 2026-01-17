@@ -136,6 +136,32 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- DupersUnited Resource Pack -->
+                <div class="mod-card featured">
+                    <div class="featured-badge">Our Resource Pack</div>
+                    <div class="mod-icon">
+                        <img alt="DupersUnited Resource Pack" src={dupersIcon} />
+                    </div>
+                    <div class="mod-info">
+                        <h3 class="mod-name">DupersUnited Resource Pack</h3>
+                        <p class="mod-description">
+                            A Resource pack to Help with Dupe finding!
+                        </p>
+                        <div class="mod-links">
+                            <a class="mod-btn primary" href="https://s-cdn.lolyay.dev/dps/du/DuResourcePack-v1.zip">
+                                <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                                     stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" x2="12" y1="15" y2="3"></line>
+                                </svg>
+                                Get Resource Pack
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         

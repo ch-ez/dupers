@@ -1,7 +1,7 @@
 <script>
     import VersionCard from '$lib/components/VersionCard.svelte';
     import { onMount } from 'svelte';
-    
+
     const mcVersions = ['1.21.4', '1.21.8', '1.21.10', '1.21.11'];
     
     let latestModVersion = 'v1.0.0';
@@ -128,7 +128,7 @@
                         <polyline points="15 3 21 3 21 9"></polyline>
                         <line x1="10" y1="14" x2="21" y2="3"></line>
                     </svg>
-                    Open Issue
+                    <span class="callout-btn-text">Open Issue</span>
                 </a>
             </div>
             
@@ -417,8 +417,8 @@
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
     }
-    
-    .versions-section, .partners-section {
+
+    .versions-section {
         margin-top: 4rem;
     }
     
@@ -438,61 +438,7 @@
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 1.5rem;
     }
-    
-    .partners-grid {
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-    }
-    
-    .partner-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        padding: 1.5rem 2rem;
-        background: rgba(30, 30, 40, 0.6);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 16px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        min-width: 160px;
-    }
-    
-    .partner-card:hover {
-        transform: translateY(-5px);
-        border-color: rgba(139, 92, 246, 0.3);
-        box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.4);
-    }
-    
-    .partner-icon {
-        width: 64px;
-        height: 64px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 12px;
-        flex-shrink: 0;
-    }
-    
-    .partner-icon.youtube {
-        background: linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.1));
-        color: #ff0000;
-    }
-    
-    .partner-icon.shop {
-        background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(34, 197, 94, 0.1));
-        color: #22c55e;
-    }
-    
-    .partner-name {
-        color: rgba(255, 255, 255, 0.9);
-        font-weight: 600;
-        font-size: 0.95rem;
-    }
-    
+
     .meta-row {
         display: flex;
         align-items: center;
@@ -512,6 +458,8 @@
         border: 1px solid rgba(251, 191, 36, 0.3);
         border-radius: 10px;
         flex: 1;
+        container-type: inline-size;
+        container-name: callout;
     }
     
     .callout-icon {
@@ -543,6 +491,8 @@
     .callout-btn {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
+        align-self: stretch;
         gap: 0.3rem;
         padding: 0.35rem 0.6rem;
         background: rgba(251, 191, 36, 0.2);
@@ -558,6 +508,26 @@
     
     .callout-btn:hover {
         background: rgba(251, 191, 36, 0.3);
+    }
+
+    .callout-btn-text {
+        display: inline;
+    }
+
+    @container callout (max-width: 400px) {
+        .callout-btn {
+            padding: 0.35rem;
+            aspect-ratio: 1;
+        }
+
+        .callout-btn-text {
+            display: none;
+        }
+
+        .callout-btn svg {
+            width: 16px;
+            height: 16px;
+        }
     }
     
     .contributors-inline {
@@ -647,86 +617,13 @@
         color: rgba(167, 139, 250, 0.9);
         font-size: 0.7rem;
     }
-    
-    .contributors-section {
-        margin-top: 2rem;
-    }
-    
-    .section-title-sm {
-        text-align: center;
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-bottom: 1.5rem;
-        color: rgba(255, 255, 255, 0.7);
-    }
-    
-    .contributors-grid {
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-    }
-    
-    .contributor-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.75rem 1rem;
-        background: rgba(30, 30, 40, 0.5);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 12px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        min-width: 100px;
-    }
-    
-    .contributor-card:hover {
-        transform: translateY(-3px);
-        border-color: rgba(139, 92, 246, 0.3);
-        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
-    }
-    
-    .contributor-avatar {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: 2px solid rgba(139, 92, 246, 0.3);
-    }
-    
-    .contributor-name {
-        color: rgba(255, 255, 255, 0.9);
-        font-weight: 600;
-        font-size: 0.8rem;
-    }
-    
-    .contributor-commits {
-        color: rgba(255, 255, 255, 0.5);
-        font-size: 0.7rem;
-    }
-    
     .footer {
         margin-top: 6rem;
         text-align: center;
         padding: 2rem 0;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
-    .home-site-link {
-        display: inline-block;
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #a78bfa;
-        text-decoration: none;
-        margin-bottom: 1rem;
-        transition: color 0.2s ease;
-    }
-    
-    .home-site-link:hover {
-        color: #c4b5fd;
-    }
-    
+
     .footer p {
         color: rgba(255, 255, 255, 0.5);
         font-size: 0.9rem;
@@ -768,15 +665,23 @@
             max-width: 250px;
             justify-content: center;
         }
-        
-        .partners-grid {
+
+        .meta-row {
             flex-direction: column;
-            align-items: center;
+            align-items: stretch;
         }
-        
-        .partner-card {
-            width: 100%;
-            max-width: 250px;
+
+        .callout-card {
+            flex: none;
+            max-width: 100%;
+        }
+
+        .callout-left {
+            flex-wrap: wrap;
+        }
+
+        .contributors-inline {
+            justify-content: center;
         }
     }
 </style>
