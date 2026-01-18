@@ -68,7 +68,8 @@
                             The base Api required for almost all Mods on Fabric!
                         </p>
                         <div class="mod-links">
-                            <a class="mod-btn primary" href="https://modrinth.com/mod/fabric-api" rel="noopener noreferrer"
+                            <a class="mod-btn primary" href="https://modrinth.com/mod/fabric-api#download"
+                               rel="noopener noreferrer"
                                target="_blank">
                                 <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round"
                                      stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18"
@@ -79,7 +80,7 @@
                                 </svg>
                                 Download
                             </a>
-                            <a class="mod-btn secondary" href="https://modrinth.com/mod/fabric-api#download"
+                            <a class="mod-btn secondary" href="https://github.com/FabricMC/fabric-api"
                                rel="noopener noreferrer"
                                target="_blank">
                                 <svg fill="currentColor" height="18" viewBox="0 0 24 24" width="18"
