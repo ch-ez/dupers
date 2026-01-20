@@ -44,6 +44,14 @@
                         DupeDB
                     </div>
                 </GlassButton>
+
+                <GlassButton colorBase="50" href="https://dupe.today">
+                    <Icon height="24" icon="fa7-solid:book" width="24" />
+                    <div class="btn-text">
+                        Docs
+                    </div>
+                </GlassButton>
+
                 <GlassButton colorBase="88" href="https://discord.gg/dupes">
                     <svg fill="currentColor" height="22" viewBox="0 0 24 24" width="22"
                          xmlns="http://www.w3.org/2000/svg">
