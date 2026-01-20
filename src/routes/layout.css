@@ -16,3 +16,114 @@ body {
 body::-webkit-scrollbar {
     display: none;
 }
+
+
+.bg-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at top left, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at center, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.bg-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.floating-orbs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: float 20s ease-in-out infinite;
+}
+
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    background: rgba(139, 92, 246, 0.2);
+    top: -100px;
+    right: -100px;
+}
+
+.orb-2 {
+    width: 300px;
+    height: 300px;
+    background: rgba(59, 130, 246, 0.15);
+    bottom: 10%;
+    left: -50px;
+    animation-delay: -7s;
+}
+
+.orb-3 {
+    width: 250px;
+    height: 250px;
+    background: rgba(168, 85, 247, 0.1);
+    top: 50%;
+    right: 20%;
+    animation-delay: -14s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(30px, -30px) scale(1.05);
+    }
+    50% {
+        transform: translate(-20px, 20px) scale(0.95);
+    }
+    75% {
+        transform: translate(20px, 30px) scale(1.02);
+    }
+}
+
+:global(*) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:global(body) {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0a0a0f;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+:global(body::-webkit-scrollbar) {
+    display: none;
+}
+
+.page-wrapper {
+    position: relative;
+    min-height: 100vh;
+}
