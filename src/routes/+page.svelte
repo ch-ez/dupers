@@ -4,9 +4,13 @@
     import DarkButton from '$lib/components/btn/DarkButton.svelte';
     import PartnerCard from '$lib/components/cards/PartnerCard.svelte';
     import dupersUnited from '$lib/assets/dupers-united.png';
+    import { onMount } from 'svelte';
+
+    onMount(() => {
 
     if (location.hostname === 'mods.dupers.wtf')
         location.replace('https://dupers.wtf/mods');
+    })
 </script>
 
 <svelte:head>

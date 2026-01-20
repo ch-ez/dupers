@@ -23,7 +23,8 @@
 		<div class="mod-links">
 			<a class="mod-btn primary" href={downloadUrl}
 				 rel="noopener noreferrer"
-				 target="_blank">
+				 target={!isDu ? '_blank' : '_self'}
+			>
 				<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round"
 						 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18"
 						 xmlns="http://www.w3.org/2000/svg">
