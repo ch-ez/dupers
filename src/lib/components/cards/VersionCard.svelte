@@ -2,6 +2,7 @@
     export let mcVersion;
     export let modVersion = 'Loading...';
     export let downloadUrl = '#';
+
 </script>
 
 <div class="version-card">
