@@ -96,7 +96,7 @@
 					iconUrl={dupersIcon}
 					isDu=true
 					name="DupersUnited Addon"
-					sourceUrl="https://github.com/YAYLOLDEV/DupersUnited"
+					sourceUrl="https://github.com/YAYLOLDEV/du-addon-public"
 				/>
 				<!-- DupersUnited Resource Pack -->
 
