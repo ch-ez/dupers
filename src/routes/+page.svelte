@@ -3,6 +3,7 @@
     import GlassButton from '$lib/components/btn/GlassButton.svelte';
     import DarkButton from '$lib/components/btn/DarkButton.svelte';
     import PartnerCard from '$lib/components/cards/PartnerCard.svelte';
+    import EmbedStuff from '$lib/components/EmbedStuff.svelte';
     import dupersUnited from '$lib/assets/dupers-united.png';
     import duperTrooper from '$lib/assets/dupertrooper.jpg';
     import theMrEpic from '$lib/assets/themrepic.jpg';
@@ -16,9 +17,14 @@
     })
 </script>
 
+<EmbedStuff
+  description="We break the economy to fix the game. Taking a stand against predatory P2W gambling in Minecraft. Join the anti-P2W movement."
+  keywords="DupersUnited, Duping, DuperTrooper, Dupe, Minecraft Dupe, Anti-P2W, Minecraft Economy, P2W Servers, Minecraft Duplication, Server Duping, Pay to Win, Gaming Community"
+  title="DupersUnited - Taking a stand against predatory P2W gambling"
+  url="https://dupers.wtf/"
+/>
+
 <svelte:head>
-    <title>DupersUnited - Mods for Duping</title>
-    <meta name="description" content="Essential mods and tools for Minecraft dupe hunting. Meteor Client, UI Utils, and the DupersUnited Addon." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">

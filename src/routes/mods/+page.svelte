@@ -6,13 +6,17 @@
 	import Icon from '@iconify/svelte';
 	import GlassButton from '$lib/components/btn/GlassButton.svelte';
 	import ModCard from '$lib/components/cards/ModCard.svelte';
+	import EmbedStuff from '$lib/components/EmbedStuff.svelte';
 </script>
 
+<EmbedStuff
+	description="Essential mods and tools for Minecraft dupe hunting. Download Meteor Client, UI Utils, DupersUnited Addon, and more. Everything you need to start dupe hunting."
+	keywords="Minecraft Mods, Dupe Mods, Meteor Client, UI Utils, Fabric API, Minecraft Duplication, Dupe Hunting, Minecraft Hacks, DupersUnited Addon, PathMind, Pay Everyone, Minecraft Tools"
+	title="Mods for Duping - DupersUnited | Essential Minecraft Dupe Hunting Tools"
+	url="https://dupers.wtf/mods"
+/>
+
 <svelte:head>
-	<title>DupersUnited - Mods for Duping</title>
-	<meta
-		content="Essential mods and tools for Minecraft dupe hunting. Meteor Client, UI Utils, and the DupersUnited Addon."
-		name="description" />
 	<link href="https://fonts.googleapis.com" rel="preconnect">
 	<link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
 	<link

@@ -1,10 +1,12 @@
 <script>
 	import './layout.css';
+	import EmbedStuff from '$lib/components/EmbedStuff.svelte';
 	import favicon from '$lib/assets/favicon.png';
 
 	let { children } = $props();
 </script>
 
+<EmbedStuff />
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
 <div class="bg-gradient"></div>
