@@ -1,9 +1,11 @@
 <script>
+	import dupersUnited from '$lib/assets/dupers-united.png';
+
 	let {
 		title = 'DupersUnited - Taking a stand against predatory P2W gambling',
 		description = 'We break the economy to fix the game. Taking a stand against predatory P2W gambling.',
 		keywords = 'DupersUnited, Duping, DuperTrooper, Dupe, Minecraft Dupe, Minecraft, Anti-P2W, Gaming, Server Economy',
-		image = 'https://dupers.wtf/_app/immutable/assets/dupers-united.CbE5sBj9.png',
+		image = dupersUnited,
 		url = 'https://dupers.wtf/',
 		type = 'website',
 		siteName = 'DupersUnited',
