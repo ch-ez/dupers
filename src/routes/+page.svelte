@@ -124,14 +124,14 @@
 
                 </PartnerCard>
 
-                <!--       <PartnerCard
+                <PartnerCard
 												 clickUrl="https://discord.gg/bukkit"
 												 iconUrl="https://cdn.discordapp.com/icons/1226222528851349646/438ab4f9c745e5d6ff5828b66eea2e6e.webp?size=80&quality=lossless"
 												 name="Autism Inc"
 												 tag="discord.gg/bukkit"
 											 >
 													 <Icon height="24" icon="logos:discord-icon" slot="icon" width="30.88" />
-											 </PartnerCard>-->
+                </PartnerCard>
 
             </section>
         </div>
