@@ -1,11 +1,10 @@
 <script>
-	import dupersUnited from '$lib/assets/dupers-united.png';
+	import dupersIcon from '$lib/assets/dupers-united.png';
 
 	let {
 		title = 'DupersUnited - Taking a stand against predatory P2W gambling',
 		description = 'We break the economy to fix the game. Taking a stand against predatory P2W gambling.',
 		keywords = 'DupersUnited, Duping, DuperTrooper, Dupe, Minecraft Dupe, Minecraft, Anti-P2W, Gaming, Server Economy',
-		image = dupersUnited,
 		url = 'https://dupers.wtf/',
 		type = 'website',
 		siteName = 'DupersUnited',
@@ -27,11 +26,11 @@
 	<meta content={url} property="og:url" />
 	<meta content={title} property="og:title" />
 	<meta content={description} property="og:description" />
-	<meta content={image} property="og:image" />
+	<meta content={dupersIcon} property="og:image" />
 	<meta content={title} property="og:image:alt" />
 	<meta content={siteName} property="og:site_name" />
 	<meta content="en_US" property="og:locale" />
-	{#if image}
+	{#if dupersIcon}
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
 		<meta property="og:image:type" content="image/png" />
@@ -50,7 +49,7 @@
 	<meta content={url} name="twitter:url" />
 	<meta content={title} name="twitter:title" />
 	<meta content={description} name="twitter:description" />
-	<meta content={image} name="twitter:image" />
+	<meta content={dupersIcon} name="twitter:image" />
 	<meta content={title} name="twitter:image:alt" />
 	<meta content={twitterHandle} name="twitter:site" />
 	<meta content={twitterHandle} name="twitter:creator" />
@@ -67,13 +66,13 @@
 		name: title,
 		description: description,
 		url: url,
-		image: image,
+		image: dupersIcon,
 		publisher: {
 			'@type': 'Organization',
 			name: 'DupersUnited',
 			logo: {
 				'@type': 'ImageObject',
-				url: image
+				url: dupersIcon
 			}
 		},
 		...(article && publishedTime ? { datePublished: publishedTime } : {}),
