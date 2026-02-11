@@ -4,7 +4,7 @@
     import DarkButton from '$lib/components/btn/DarkButton.svelte';
     import PartnerCard from '$lib/components/cards/PartnerCard.svelte';
     import dupersUnited from '$lib/assets/dupers-united.png';
-    import duperTrooper from '$lib/assets/dupertrooper.jpg.jpg';
+    import duperTrooper from '$lib/assets/dupertrooper.jpg';
     import theMrEpic from '$lib/assets/themrepic.jpg';
     import theHorizon from '$lib/assets/theHorizon.jpg';
     import { onMount } from 'svelte';
