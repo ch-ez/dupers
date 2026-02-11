@@ -26,7 +26,9 @@
 	<meta content={url} property="og:url" />
 	<meta content={title} property="og:title" />
 	<meta content={description} property="og:description" />
-	<meta content={dupersIcon} property="og:image" />
+	<meta
+		content="https://cdn.discordapp.com/icons/1407854032248111134/6361acc66782b52eedb69012c1985a0c.png?size=128&quality=lossless"
+		property="og:image" />
 	<meta content={title} property="og:image:alt" />
 	<meta content={siteName} property="og:site_name" />
 	<meta content="en_US" property="og:locale" />
@@ -49,7 +51,9 @@
 	<meta content={url} name="twitter:url" />
 	<meta content={title} name="twitter:title" />
 	<meta content={description} name="twitter:description" />
-	<meta content={dupersIcon} name="twitter:image" />
+	<meta
+		content="https://cdn.discordapp.com/icons/1407854032248111134/6361acc66782b52eedb69012c1985a0c.png?size=128&quality=lossless"
+		name="twitter:image" />
 	<meta content={title} name="twitter:image:alt" />
 	<meta content={twitterHandle} name="twitter:site" />
 	<meta content={twitterHandle} name="twitter:creator" />
@@ -66,13 +70,13 @@
 		name: title,
 		description: description,
 		url: url,
-		image: dupersIcon,
+		image: "https://cdn.discordapp.com/icons/1407854032248111134/6361acc66782b52eedb69012c1985a0c.png?size=128&quality=lossless",
 		publisher: {
 			'@type': 'Organization',
 			name: 'DupersUnited',
 			logo: {
 				'@type': 'ImageObject',
-				url: dupersIcon
+				url: "https://cdn.discordapp.com/icons/1407854032248111134/6361acc66782b52eedb69012c1985a0c.png?size=128&quality=lossless"
 			}
 		},
 		...(article && publishedTime ? { datePublished: publishedTime } : {}),
