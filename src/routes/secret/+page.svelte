@@ -2,6 +2,6 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		window.location.replace('https://www.youtube.com/watch?v=DLzxrzFCyOs');
+		window.location.replace('https://arg.dupers.wtf/code?c=**Oz34rzF2LOs***.**');
 	});
 </script>
