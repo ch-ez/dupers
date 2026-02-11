@@ -4,6 +4,9 @@
     import DarkButton from '$lib/components/btn/DarkButton.svelte';
     import PartnerCard from '$lib/components/cards/PartnerCard.svelte';
     import dupersUnited from '$lib/assets/dupers-united.png';
+    import duperTrooper from '$lib/assets/duperTrooper.jpg';
+    import theMrEpic from '$lib/assets/themrepic.jpg';
+    import theHorizon from '$lib/assets/theHorizon.jpg';
     import { onMount } from 'svelte';
 
     onMount(() => {
@@ -86,7 +89,7 @@
             <section class="partner-section">
                 <PartnerCard
                   clickUrl="https://www.youtube.com/@TheDuperTrooper"
-                  iconUrl="https://yt3.googleusercontent.com/ytc/AIdro_kYrSpiQ8-QHVlr8EfRZXwAxkPqCoTmip7eQUDBDNJqkVc=s160-c-k-c0x00ffffff-no-rj"
+                  iconUrl={duperTrooper}
                   name="DuperTrooper"
                   tag="@TheDuperTrooper"
                 >
@@ -96,7 +99,7 @@
 
                 <PartnerCard
                   clickUrl="https://www.youtube.com/@TheMisterEpic"
-                  iconUrl="https://yt3.googleusercontent.com/ytc/AIdro_moAuemmWPwA-vT4XgOnm_rfYuhM3cA8pvtZmcTJgCG6ck=s160-c-k-c0x00ffffff-no-rj"
+                  iconUrl={theMrEpic}
                   name="TheMisterEpic"
                   tag="@TheMisterEpic"
                 >
@@ -106,7 +109,7 @@
 
                 <PartnerCard
                   clickUrl="https://www.youtube.com/@The_Horizon"
-                  iconUrl="https://yt3.googleusercontent.com/ytc/AIdro_kBEjUgFYQ0RVyh1z5R4XFnUnzF3rdj_M0H0PQgLXF_6w=s160-c-k-c0x00ffffff-no-rj"
+                  iconUrl={theHorizon}
                   name="The Horizon"
                   tag="@The_Horizon"
                 >
@@ -124,14 +127,23 @@
 
                 </PartnerCard>
 
-                <!--        <PartnerCard
-												 clickUrl="https://discord.gg/bukkit"
-												 iconUrl="https://cdn.discordapp.com/icons/1226222528851349646/438ab4f9c745e5d6ff5828b66eea2e6e.webp?size=80&quality=lossless"
-												 name="Autism Inc"
-												 tag="discord.gg/bukkit"
-											 >
-													 <Icon height="24" icon="logos:discord-icon" slot="icon" width="30.88" />
-											 </PartnerCard>-->
+                <!--CENSORSHIP    <PartnerCard
+											clickUrl="https://discord.gg/bukkit"
+											iconUrl="https://cdn.discordapp.com/icons/1226222528851349646/438ab4f9c745e5d6ff5828b66eea2e6e.webp?size=80&quality=lossless"
+											name="Autism Inc"
+											tag="discord.gg/bukkit"
+										>
+												<Icon height="24" icon="logos:discord-icon" slot="icon" width="30.88" />
+										</PartnerCard>
+
+										<PartnerCard
+											clickUrl="https://www.youtube.com/@Zman1064"
+											iconUrl={zman}
+											name="Zman1064"
+											tag="@Zman1064"
+										>
+												<Icon height="24" icon="logos:youtube-icon" slot="icon" width="34.14" />
+										</PartnerCard> -->
 
             </section>
         </div>
@@ -261,6 +273,9 @@
         .hero {
             padding: 2rem 0;
         }
+    }
 
+    .ab4f9c745e {
+        display: none;
     }
 </style>
