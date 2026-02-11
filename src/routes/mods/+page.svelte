@@ -108,6 +108,27 @@
 					isDu=true
 					name="DupersUnited Pack"
 				/>
+
+				<!-- Pay Everyone -->
+
+				<ModCard
+					description="Useful for mass-paying players to distribute money."
+					downloadUrl="https://modrinth.com/mod/payeveryone#download"
+					iconUrl="https://cdn.modrinth.com/data/EJO20Qp6/02887dbd66f1009ffaf3fb3acabf990c49ec6198_96.webp"
+					name="Pay Everyone Mod"
+					sourceUrl="https://github.com/aurickk/Pay-Everyone"
+				/>
+
+				<!-- PathMind -->
+
+				<ModCard
+					description="Used to automate tasks with a simple but powerful Node System!"
+					downloadUrl="https://modrinth.com/mod/pathmind#download"
+					iconUrl="https://cdn.modrinth.com/data/GX0d78rL/c059e4980c36c5f72dfa6c0832ba52d13b2d3304.png"
+					name="PathMind"
+					sourceUrl="https://github.com/soymods/pathmind"
+				/>
+
 			</div>
 		</section>
 
