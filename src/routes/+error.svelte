@@ -1,7 +1,5 @@
-<script>
-    import { page } from '$app/stores';
-</script>
-
+<script></script>
+<!-- This kinda tuff -->
 <svelte:head>
     <title>404 - Page Not Found | DupersUnited</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
